@@ -109,7 +109,7 @@ namespace OsuSongName
                     }
                     try
                     {
-                        return process.MainWindowTitle.Substring(8);
+                        return process.MainWindowTitle.Substring(process.MainWindowTitle.IndexOf("-") + 2);
                     }
                     // could throw exception if another process name is "osu!" and the title is less than 6 chars
                     catch {}
