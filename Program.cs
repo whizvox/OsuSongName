@@ -103,7 +103,8 @@ namespace OsuSongName
             {
                 if (process.MainWindowTitle.Length > 0)
                 {
-                    if (process.MainWindowTitle == Constants.OSU_NAME)
+                    // if song isn't being played, then title will read "osu!", "osu!cuttingedge" or "osu!beta"
+                    if (!process.MainWindowTitle.Contains("-"))
                     {
                         return Constants.SELECTING;
                     }
